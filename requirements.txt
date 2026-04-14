@@ -1,0 +1,63 @@
+# ─────────────────────────────────────────────────────────────
+#  Gemma LoRA Fine-Tuning FastAPI Backend
+#  Primary backend: MLX (Apple Silicon M2)
+#  Fallback backend: HuggingFace PEFT + PyTorch MPS
+# ─────────────────────────────────────────────────────────────
+
+# Web framework
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+sse-starlette>=2.1.0
+python-multipart>=0.0.9
+
+# Config & validation
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+python-dotenv>=1.0.1
+
+# PDF parsing & document processing
+pdfplumber>=0.11.4
+pypdf>=4.2.0
+requests>=2.32.3
+beautifulsoup4>=4.12.3
+lxml>=5.2.2
+tqdm>=4.66.4
+
+# ──── MLX backend (Apple Silicon native) ────────────────────
+mlx>=0.18.0
+mlx-lm>=0.18.0
+
+# ──── HuggingFace / PyTorch fallback backend ────────────────
+torch>=2.3.0
+transformers>=4.44.0
+peft>=0.12.0
+datasets>=2.20.0
+trl>=0.10.0
+accelerate>=0.32.0
+huggingface-hub>=0.24.0
+tokenizers>=0.19.1
+sentencepiece>=0.2.0
+protobuf>=4.25.3
+
+# ──── Evaluation ─────────────────────────────────────────────
+# Classic NLP metrics
+evaluate>=0.4.2
+rouge-score>=0.1.2
+nltk>=3.8.1
+sacrebleu>=2.4.2
+
+# Semantic similarity (for faithfulness & answer relevance)
+sentence-transformers>=3.0.1
+
+# LLM-as-a-Judge (uses openai-compatible API or local model)
+openai>=1.35.0
+
+# Ranking metrics (nDCG, MAP)
+scikit-learn>=1.5.0
+numpy>=1.26.4
+
+# Async & utilities
+aiofiles>=23.2.1
+httpx>=0.27.0
+loguru>=0.7.2
+rich>=13.7.1

@@ -1,0 +1,40 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Data (large files)
+data/raw/*.pdf
+data/processed/
+# Keep JSONL and directory structure
+!data/.gitkeep
+!data/raw/.gitkeep
+!data/train/.gitkeep
+
+# Adapters (large model weights)
+adapters/
+!adapters/.gitkeep
+
+# Logs
+logs/
+*.log
+
+# Mac
+.DS_Store
+.AppleDouble
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# MLX cache
+~/.cache/huggingface/

@@ -1,0 +1,27 @@
+model: google/gemma-3-1b-it
+train: true
+data: data/train
+adapter_path: adapters/test-dry-run
+batch_size: 4
+iters: 18
+learning_rate: 0.0003
+steps_per_report: 1
+steps_per_eval: 50
+save_every: 100
+max_seq_length: 512
+grad_checkpoint: true
+seed: 42
+fine_tune_type: lora
+num_layers: -1
+lora_parameters:
+  rank: 8
+  scale: 16.0
+  dropout: 0.05
+  keys:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
