@@ -5,36 +5,50 @@ __pycache__/
 .Python
 venv/
 env/
+
+# ── Secrets (NEVER commit these) ─────────────────────────────
 .env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# ── Python packaging ──────────────────────────────────────────
 *.egg-info/
 dist/
 build/
 .eggs/
 
-# Data (large files)
-data/raw/*.pdf
-data/processed/
-# Keep JSONL and directory structure
+# ── Data files (generated, can be large) ─────────────────────
+data/raw/          # downloaded PDFs
+data/processed/    # extracted text
+data/train/*.jsonl # generated training datasets
+data/train/*.yaml  # generated MLX config files
+data/train/*.json
+
+# Keep empty directory markers
 !data/.gitkeep
 !data/raw/.gitkeep
 !data/train/.gitkeep
 
-# Adapters (large model weights)
+# ── Model adapter weights (can be GBs) ───────────────────────
 adapters/
 !adapters/.gitkeep
 
-# Logs
+# ── Logs ─────────────────────────────────────────────────────
 logs/
 *.log
 
-# Mac
+# ── macOS ─────────────────────────────────────────────────────
 .DS_Store
 .AppleDouble
+.LSOverride
 
-# IDE
+# ── IDEs ──────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
+*.swo
 
-# MLX cache
-~/.cache/huggingface/
+# ── HuggingFace / MLX caches ─────────────────────────────────
+.cache/
